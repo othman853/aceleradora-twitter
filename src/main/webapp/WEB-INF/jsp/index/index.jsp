@@ -63,10 +63,10 @@
 <body>
 	<form action = "${linkTo[IndexController].twitar}" method = "post">
 		<label class="form-component"> Autor: </label>		
-		<input class="form-component text-box" type = "text" name = "tweet.nomeAutor">
+		<input class="form-component text-box" type = "text" name = "tweet.nomeAutor" value="${tweet.nomeAutor}">
 		
 		<label class="form-component"> Tweet: </label> 
-		<textarea class="form-component text-box text-area" name="tweet.mensagem"> </textarea> 		
+		<textarea class="form-component text-box text-area" name="tweet.mensagem" value="${tweet.mensagem}"> </textarea> 		
 		
 		<input class="form-component button" type = "submit" value = "Enviar">
 	</form>

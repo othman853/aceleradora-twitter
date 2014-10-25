@@ -2,8 +2,6 @@ package br.com.aceleradora.controller;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import br.com.aceleradora.models.BancoDeDados;
 import br.com.aceleradora.models.Tweet;
 import br.com.caelum.vraptor.Path;
@@ -19,7 +17,7 @@ public class IndexController {
 		this.banco = banco;		
 	}
 
-	public void index() {}
+	public void index(Tweet t) {}
 
 	@Path("/")
 	public List<Tweet> listarTweets() {
@@ -38,7 +36,7 @@ public class IndexController {
 		result.forwardTo(this).listarTweets();
 	}
 	
-	public void alterar(Tweet t, Result r){
-		
+	public void alterar(long id, Result r){
+		r.forwardTo(this).index(banco.findTweet(id));
 	}
 }
