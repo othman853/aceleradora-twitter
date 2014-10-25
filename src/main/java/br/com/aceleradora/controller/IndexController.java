@@ -2,36 +2,44 @@ package br.com.aceleradora.controller;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import br.com.aceleradora.models.BancoDeDados;
 import br.com.aceleradora.models.Tweet;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 
-
 @Resource
 public class IndexController {
-	
+
 	private BancoDeDados banco;
-	
-	public IndexController(BancoDeDados banco){
-		this.banco = banco;
-		//banco = new BancoDeDados();
+
+	public IndexController(BancoDeDados banco) {
+		this.banco = banco;		
 	}
-	
+
+	public void index() {}
+
 	@Path("/")
-	public void index(){
-		
-	}
-	
-	public void recebeDados(String dado, Result result){
-		System.out.println(dado);
-		result.include("v1", dado);
-	}
-	
-	public List<Tweet> twitar (Tweet tweet, Result result){
-		banco.adicionaTweet(tweet);
+	public List<Tweet> listarTweets() {
+
 		return banco.todosTweets();
-		//result.forwardTo(this).recebeDados(tweet.getMensagem(), result);
+	}
+		
+	public void twitar(Tweet tweet, Result result) {
+		banco.adicionaTweet(tweet);
+		result.forwardTo(this).listarTweets();
+	}
+
+	public void remover(Tweet t, Result result) {
+		banco.removerTweet(t);
+		result.of(this).twitar(t, result);
+
+		result.forwardTo(this).twitar(t, result);
+	}
+	
+	public void alterar(Tweet t, Result r){
+		
 	}
 }
