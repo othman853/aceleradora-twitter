@@ -32,11 +32,10 @@ public class IndexController {
 		result.forwardTo(this).listarTweets();
 	}
 
-	public void remover(Tweet t, Result result) {
-		banco.removerTweet(t);
-		result.of(this).twitar(t, result);
-
-		result.forwardTo(this).twitar(t, result);
+	public void remover(long id, Result result) {
+		banco.removerTweet(id);
+		
+		result.forwardTo(this).listarTweets();
 	}
 	
 	public void alterar(Tweet t, Result r){

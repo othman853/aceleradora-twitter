@@ -34,8 +34,17 @@ public class BancoDeDados {
 		tweets.add(tweet);
 	}
 	
-	public void removerTweet(Tweet tweet){
-		tweets.remove(tweets.indexOf(tweet));
+	public void removerTweet(long id){
+		for(Tweet tw: tweets){
+			if(tw.getId() == id){
+				tweets.remove(tweets.indexOf(tw));
+				return;
+			}
+			
+		}
+		
+		System.out.println("Tweet not found. : " + id);
+		
 	}
 	
 	public List<Tweet> todosTweets(){

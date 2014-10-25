@@ -62,8 +62,8 @@
 			
 			<footer>
 			<p> ${tweet.dataHora} </p>
-			<a class="button" href="${linkTo[IndexController].alterar}">Alterar</a>
-			<a class="button" href="${linkTo[IndexController].remover}" >Remover</a>
+			<a class="button" href="${linkTo[IndexController].alterar}?id=${tweet.id}">Alterar</a>
+			<a class="button" href="${linkTo[IndexController].remover}?id=${tweet.id}" >Remover</a>
 			</footer>
 			
 			 </article>
