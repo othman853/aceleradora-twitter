@@ -66,7 +66,7 @@
 		<input class="form-component text-box" type = "text" name = "tweet.nomeAutor" value="${tweet.nomeAutor}">
 		
 		<label class="form-component"> Tweet: </label> 
-		<textarea class="form-component text-box text-area" name="tweet.mensagem" value="${tweet.mensagem}"> </textarea> 		
+		<textarea class="form-component text-box text-area" name="tweet.mensagem" >${tweet.mensagem}</textarea> 		
 		
 		<input class="form-component button" type = "submit" value = "Enviar">
 	</form>

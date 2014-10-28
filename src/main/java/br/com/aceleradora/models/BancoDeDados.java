@@ -39,10 +39,12 @@ public class BancoDeDados {
 		return null;
 	}
 
-	public void adicionaTweet(Tweet tweet) {
+	public void adicionaTweet(Tweet tweet) {		
 		if (findTweet(tweet.getId()) != null) {
+			
 			salvarAlteracoes(tweet);
 		} else {
+			System.out.println(tweet.toString());
 			tweet.setId(++lastId);
 			tweets.add(tweet);
 		}
@@ -54,7 +56,6 @@ public class BancoDeDados {
 				tweets.remove(tweets.indexOf(tw));
 				return;
 			}
-
 		}
 
 		System.out.println("Tweet not found. : " + id);
@@ -64,7 +65,7 @@ public class BancoDeDados {
 		for (Tweet tw : tweets) {
 			if (tw.getId() == t.getId()) {
 				tweets.set(tweets.indexOf(tw), t);
-				return;
+				break;
 			}
 		}
 	}

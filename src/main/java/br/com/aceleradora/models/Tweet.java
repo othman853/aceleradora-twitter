@@ -56,4 +56,8 @@ public class Tweet {
 	}
 	
 	
+	public String toString(){
+		return Long.toString(this.id) + " | " + this.nomeAutor + " | " + this.mensagem;
+	}
+	
 }

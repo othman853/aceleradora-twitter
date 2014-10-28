@@ -17,7 +17,12 @@ public class IndexController {
 		this.banco = banco;		
 	}
 
-	public void index(Tweet t) {}
+	public Tweet index(Tweet t, Result r) {
+		r.include("tweet.id", t.getId());
+		System.out.println("Index: " + t.getId());
+		return t;
+		
+	}
 
 	@Path("/")
 	public List<Tweet> listarTweets() {
@@ -37,6 +42,8 @@ public class IndexController {
 	}
 	
 	public void alterar(long id, Result r){
-		r.forwardTo(this).index(banco.findTweet(id));
+		
+		r.forwardTo(this).index(banco.findTweet(id), r);
+		
 	}
 }
