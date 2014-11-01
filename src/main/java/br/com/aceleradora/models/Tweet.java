@@ -9,7 +9,8 @@ public class Tweet {
 	private long id;	
 	private String mensagem;
 	private String nomeAutor;
-	private String dataHora;  
+	private String dataHora;
+	private long idAutor;
 	
 	public Tweet(){
 		// obtem a data e a hora da criacao do tweet em um objeto DateTime
@@ -53,6 +54,14 @@ public class Tweet {
 	
 	public long getId() {
 		return id;
+	}
+	
+	public void setIdAutor(long idAutor) {
+		this.idAutor = idAutor;
+	}
+	
+	public long getIdAutor() {
+		return idAutor;
 	}
 	
 	

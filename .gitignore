@@ -10,3 +10,4 @@ classpath/*
 *.ear
 /bin/
 /target/
+/src/main/webapp/resources
