@@ -18,7 +18,7 @@
 		
 		
 	</style>
-	<!--  <link rel="stylesheet" href="<c:url value="/resources/css/index.css" />">-->
+	<!--  <link rel="stylesheet" href="<c:url value="/resources/css/index.css" />">-->	
 	 <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap/css/bootstrap.css" />">
 	 <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap/css/bootflat.css" />">
 	
