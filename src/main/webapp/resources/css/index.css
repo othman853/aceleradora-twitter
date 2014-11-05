@@ -1,0 +1,45 @@
+body{
+			background-color:#ecf0f1;
+		}
+		
+		form{
+			background-color:#2980b9;
+			color:#ecf0f1;
+			width:45%;
+			margin:0 auto;
+			padding:5px;
+		}
+		
+		.form-component{
+			display:block;
+			width:80%;
+			margin:0 auto;
+			margin-bottom:10px;
+			height:20px;
+			
+			font-family:sans-serif;
+			font-size:16px;
+		}
+		
+		.text-box{
+			border:0;						
+		}
+		
+		.text-area{
+			max-width:80%;
+			height:100px;
+			max-height:150px;
+		}
+		
+		.button{
+			border:0;
+			height:30px;
+			width:50%;
+			background-color:#1abc9c;
+			color:#ecf0f1;
+			transition:0.4s ease-in;
+		}
+		
+			.button:hover{
+				background-color:#2ecc71;
+			}
